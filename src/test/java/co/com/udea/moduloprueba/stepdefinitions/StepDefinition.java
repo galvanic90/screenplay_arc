@@ -1,13 +1,18 @@
 package co.com.udea.moduloprueba.stepdefinitions;
 
+import co.com.udea.moduloprueba.pages.HomePage;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import net.serenitybdd.screenplay.ui.Dropdown;
+import net.serenitybdd.screenplay.questions.SelectedValue;
+
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.core.IsEqual.equalTo;
 
 public class StepDefinition {
 
@@ -18,15 +23,19 @@ public class StepDefinition {
     }
 
     @Given("I am on home page")
-    public void iOpenTheWeb() {
+    public void openTheWeb() {
         BrowseTheWeb.as(OnStage.theActorInTheSpotlight()).open();
     }
 
     @When("I choose the origin {}")
-    public void iChooseTheOrigin(String text) {
+    public void chooseTheOrigin(String cityName) {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                Click.on(Dropdown.withNameOrId("fromPort")),
-                Click.on(Dropdown.withNameOrId("fromPort").containingText(text))
+                SelectFromOptions.byValue(cityName).from(HomePage.FROM)
         );
+    }
+
+    @Then("The origin is {}")
+    public void theOriginIs(String expectedOrigin) {
+        OnStage.theActorInTheSpotlight().should(seeThat(SelectedValue.of(HomePage.FROM), equalTo(expectedOrigin)));
     }
 }
