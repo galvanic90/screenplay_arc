@@ -3,7 +3,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "net.serenity-bdd:serenity-gradle-plugin:2.1.4"
+        classpath "net.serenity-bdd:serenity-gradle-plugin:4.3.2"
+        classpath "net.serenity-bdd:serenity-single-page-report:4.3.2"
     }
 }
 
@@ -13,7 +14,8 @@ plugins {
     id 'eclipse'
     id 'idea'
 }
-apply plugin: 'net.serenity-bdd.aggregator'
+
+apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
 
 group 'co.com.udea'
 
@@ -63,3 +65,9 @@ tasks.named('test') {
     // System configs
 
 }
+
+serenity {
+    reports = ["single-page-html"]
+}
+
+test.finalizedBy(aggregate, reports)
