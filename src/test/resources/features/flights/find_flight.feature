@@ -1,6 +1,6 @@
 Feature: Select the flights
 
- Scenario: # Scenario to evaluate
+ Scenario: Select flights
     Given I am on home page
     When I choose the origin Boston
 
