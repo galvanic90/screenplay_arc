@@ -1,7 +1,7 @@
 Feature: Select the flights
 
  Scenario: Select flights
-    Given I am on home page
-    When I choose the origin Boston
-   Then The origin is Boston
+    Given Sara is on home page
+    When Sara choose the origin Boston
+   Then Sara see that the origin is Boston
 
