@@ -1,10 +1,12 @@
-Feature: Select the flights
+Feature: See the list of flights
+   As customer I want to see the list of flights, so I can know the options for my travel
 
- Scenario: Select Origin flight
+ Scenario: See the list of flights
     Given Sara is on home page
     When Sara travels from Boston to London
     Then the following flights are displayed:
-    |Airline| Flight # |
-    | Virgin America | 43 |
-     | United Airlines | 234 |
-     |Aer Lingus      | 9696 |
+    | Flight # | Airline         |
+    |   43     | Virgin America  |
+    |   234    | United Airlines |
+    |   9696   | Aer Lingus      |
+    |   4346   | Lufthansa       |

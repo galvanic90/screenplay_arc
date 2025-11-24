@@ -1,7 +1,7 @@
 Feature: Select the flight
-   As customer I want to select the flight so I can travel
+   As customer I want to select the flight so I can make the reservation
 
-#Scenario: Select the flight
-#   Given Sara chose the cities of origin and destination
-#   When Sara see the list of flights
-#   Then Sara can choose the flight
+Scenario: Select the flight
+   Given Sara is on home page
+   When Sara travels from Boston to Cairo
+   Then Sara choose the first flight
