@@ -4,4 +4,4 @@ Feature: Select the flight
 Scenario: Select the flight
    Given Sara is on home page
    When Sara travels from Boston to Cairo
-   Then Sara choose the first flight
+   Then Sara selects the first flight

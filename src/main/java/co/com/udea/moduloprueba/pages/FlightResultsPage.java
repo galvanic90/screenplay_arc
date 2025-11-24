@@ -16,4 +16,12 @@ public class FlightResultsPage extends PageObject {
     public static final Target AIRLINE_NAME =
             Target.the("airline name in row")
                 .locatedBy(".//td[3]");
+
+    public static final Target FIRST_FLIGHT_ROW =
+            Target.the("first flight row")
+                    .locatedBy(".//tr[1]");
+
+    public static final Target FIRST_CHOOSE_BUTTON =
+            Target.the("first choose flight button")
+                    .locatedBy("//table/tbody/tr[1]//input[@type='submit' and @value='Choose This Flight']");
 }

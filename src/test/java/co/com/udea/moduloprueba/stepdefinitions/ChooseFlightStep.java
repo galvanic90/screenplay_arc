@@ -2,11 +2,9 @@ package co.com.udea.moduloprueba.stepdefinitions;
 import co.com.udea.moduloprueba.tasks.SelectCities;
 import co.com.udea.moduloprueba.questions.DisplayedFlights;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 
 import java.util.List;
