@@ -2,6 +2,7 @@ package co.com.udea.moduloprueba.stepdefinitions;
 
 import co.com.udea.moduloprueba.pages.HomePage;
 import co.com.udea.moduloprueba.tasks.SelectCities;
+import co.com.udea.moduloprueba.utils.Pause;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,6 +26,7 @@ public class ChooseCitiesSteps {
         actor.attemptsTo(
                 SelectFromOptions.byValue(cityName).from(HomePage.FROM)
         );
+        actor.attemptsTo(Pause.forSeconds(2));
     }
 
     @Then("{actor} see that the origin is {}")
@@ -37,6 +39,7 @@ public class ChooseCitiesSteps {
         actor.attemptsTo(
                 SelectFromOptions.byValue(cityName).from(HomePage.TO)
         );
+        actor.attemptsTo(Pause.forSeconds(2));
     }
 
     @Then("{actor} see that the destination is {}")
@@ -49,5 +52,6 @@ public class ChooseCitiesSteps {
         actor.attemptsTo(
                 SelectCities.selectCities(from, to)
         );
+        actor.attemptsTo(Pause.forSeconds(2));
     }
 }

@@ -2,6 +2,7 @@ package co.com.udea.moduloprueba.stepdefinitions;
 import co.com.udea.moduloprueba.tasks.SelectCities;
 import co.com.udea.moduloprueba.questions.DisplayedFlights;
 
+import co.com.udea.moduloprueba.utils.Pause;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
@@ -18,6 +19,7 @@ public class ChooseFlightStep {
     @When("{actor} travels from {string} to {string}")
     public void travelsFromTo(Actor actor, String origin, String destination) {
         actor.attemptsTo(SelectCities.selectCities(origin, destination));
+        actor.attemptsTo(Pause.forSeconds(3));
     }
 
     @Then("the following flights are displayed:")

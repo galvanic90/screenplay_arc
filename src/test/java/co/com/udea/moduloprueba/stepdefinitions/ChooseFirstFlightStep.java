@@ -1,5 +1,6 @@
 package co.com.udea.moduloprueba.stepdefinitions;
 import co.com.udea.moduloprueba.tasks.SelectFlight;
+import co.com.udea.moduloprueba.utils.Pause;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.Actor;
 
@@ -10,6 +11,7 @@ public class ChooseFirstFlightStep {
         actor.attemptsTo(
                 SelectFlight.firstAvailable()
         );
+        actor.attemptsTo(Pause.forSeconds(3));
     }
 
 }

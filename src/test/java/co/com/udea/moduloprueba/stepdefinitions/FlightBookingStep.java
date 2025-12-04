@@ -4,6 +4,7 @@ import co.com.udea.moduloprueba.pages.FlightBookingPage;
 import co.com.udea.moduloprueba.tasks.EnterCustomerData;
 import co.com.udea.moduloprueba.questions.TextOfField;
 import co.com.udea.moduloprueba.tasks.PurchaseFlight;
+import co.com.udea.moduloprueba.utils.Pause;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
@@ -19,6 +20,7 @@ public class FlightBookingStep {
     @When("{actor} writes her name {string}")
     public void writeName(Actor actor, String name) {
         actor.attemptsTo(EnterCustomerData.name(name));
+        actor.attemptsTo(Pause.forSeconds(2));
     }
 
     @Then("{actor} sees that the name is {string}")
@@ -30,6 +32,7 @@ public class FlightBookingStep {
     @When("{actor} writes her address {string}")
     public void writeAddress(Actor actor, String address) {
         actor.attemptsTo(EnterCustomerData.address(address));
+        actor.attemptsTo(Pause.forSeconds(2));
     }
 
     @Then("{actor} sees her address is {string}")
@@ -41,6 +44,7 @@ public class FlightBookingStep {
     @When("{actor} writes her city {string}")
     public void writeCity(Actor actor, String city) {
         actor.attemptsTo(EnterCustomerData.city(city));
+        actor.attemptsTo(Pause.forSeconds(2));
     }
 
     @Then("{actor} sees her city is {string}")
@@ -52,6 +56,7 @@ public class FlightBookingStep {
     @When("{actor} writes her state {string}")
     public void writeState(Actor actor, String state) {
         actor.attemptsTo(EnterCustomerData.state(state));
+        actor.attemptsTo(Pause.forSeconds(3));
     }
 
     @Then("{actor} sees her state is {string}")
@@ -85,6 +90,7 @@ public class FlightBookingStep {
     @When("{actor} writes her credit card number {string}")
     public void writeCreditCard(Actor actor, String number) {
         actor.attemptsTo(EnterCustomerData.cardNumber(number));
+        actor.attemptsTo(Pause.forSeconds(3));
     }
 
     @Then("{actor} sees her credit card number is {string}")
@@ -96,6 +102,7 @@ public class FlightBookingStep {
     @When("{actor} writes the month {string}")
     public void writeMonth(Actor actor, String month) {
         actor.attemptsTo(EnterCustomerData.month(month));
+        actor.attemptsTo(Pause.forSeconds(3));
     }
 
     @Then("{actor} sees the month is {string}")
@@ -107,6 +114,7 @@ public class FlightBookingStep {
     @When("{actor} writes the year {string}")
     public void writeYear(Actor actor, String year) {
         actor.attemptsTo(EnterCustomerData.year(year));
+        actor.attemptsTo(Pause.forSeconds(3));
     }
 
     @Then("{actor} sees the year is {string}")
@@ -118,6 +126,7 @@ public class FlightBookingStep {
     @When("{actor} writes the name on the credit card {string}")
     public void writeCardName(Actor actor, String name) {
         actor.attemptsTo(EnterCustomerData.cardName(name));
+        actor.attemptsTo(Pause.forSeconds(3));
 
     }
 
@@ -129,6 +138,7 @@ public class FlightBookingStep {
     @When("{actor} purchases flights")
     public void purchaseFlights(Actor actor) {
         actor.attemptsTo(PurchaseFlight.now());
+        actor.attemptsTo(Pause.forSeconds(5));
     }
 
 }
