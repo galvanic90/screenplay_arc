@@ -54,12 +54,6 @@ public class EnterCustomerData implements Task {
                     Enter.theValue(value).into(target)
             );
         }
-
-        if (field.equals("cardName")) {
-            actor.attemptsTo(
-                    Click.on(FlightBookingPage.PURCHASE_FLIGHTS)
-            );
-        }
     }
 
     // Factory methods
@@ -102,4 +96,5 @@ public class EnterCustomerData implements Task {
     public static EnterCustomerData cardName(String value) {
         return Tasks.instrumented(EnterCustomerData.class, "cardName", value);
     }
+
 }

@@ -37,3 +37,4 @@ Scenario: Select the flight
 
    When Sara writes the name on the credit card "Sara Galvan Ortega"
    Then Sara sees the name on the credit card is "Sara Galvan Ortega"
+   When Sara purchases flights

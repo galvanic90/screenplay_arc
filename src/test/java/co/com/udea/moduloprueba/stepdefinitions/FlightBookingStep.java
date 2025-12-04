@@ -3,11 +3,14 @@ package co.com.udea.moduloprueba.stepdefinitions;
 import co.com.udea.moduloprueba.pages.FlightBookingPage;
 import co.com.udea.moduloprueba.tasks.EnterCustomerData;
 import co.com.udea.moduloprueba.questions.TextOfField;
+import co.com.udea.moduloprueba.tasks.PurchaseFlight;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static org.hamcrest.Matchers.equalTo;
 
 public class FlightBookingStep {
@@ -115,12 +118,17 @@ public class FlightBookingStep {
     @When("{actor} writes the name on the credit card {string}")
     public void writeCardName(Actor actor, String name) {
         actor.attemptsTo(EnterCustomerData.cardName(name));
-        // ❗ Removed: Click.on(PURCHASE_FLIGHTS)
-        // Already included inside the Task
+
     }
 
     @Then("{actor} sees the name on the credit card is {string}")
     public void checkCardName(Actor actor, String expected) {
         actor.should(seeThat(TextOfField.cardName(), equalTo(expected)));
     }
+
+    @When("{actor} purchases flights")
+    public void purchaseFlights(Actor actor) {
+        actor.attemptsTo(PurchaseFlight.now());
+    }
+
 }
