@@ -1,6 +1,5 @@
 package co.com.udea.moduloprueba.stepdefinitions;
 
-import co.com.udea.moduloprueba.pages.FlightBookingPage;
 import co.com.udea.moduloprueba.tasks.EnterCustomerData;
 import co.com.udea.moduloprueba.questions.TextOfField;
 import co.com.udea.moduloprueba.tasks.PurchaseFlight;
@@ -8,10 +7,8 @@ import co.com.udea.moduloprueba.utils.Pause;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static org.hamcrest.Matchers.equalTo;
 
 public class FlightBookingStep {

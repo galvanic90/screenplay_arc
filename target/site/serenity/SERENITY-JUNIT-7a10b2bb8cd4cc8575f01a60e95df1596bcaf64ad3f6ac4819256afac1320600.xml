@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="See the list of flights" skipped="0" tests="1" time="0.02" timestamp="2025-12-04 02:27:55"><testcase name="See the list of flights"><failure message="Undefined default URL for page object PageObject" type="java.lang.AssertionError">Undefined default URL for page object PageObject</failure><system-err>Undefined default URL for page object PageObject
+co.com.udea.moduloprueba.stepdefinitions.ChooseCitiesSteps.openTheWeb(ChooseCitiesSteps.java:21)
+✽.Sara is on home page(file:///home/xaraxx/screenplay_arc/src/test/resources/features/flights/travels.feature:5)
+</system-err></testcase></testsuite>
